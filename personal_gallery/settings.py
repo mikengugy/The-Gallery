@@ -14,6 +14,9 @@ import os
 import django_heroku
 import dj_database_url
 from decouple import config,Csv
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 MODE=config("MODE", default="dev")
 SECRET_KEY = 'ke3xd7_9m*u0tili=$&51ewm$4j82-b&g#f*$8o+og#bby01zg'
@@ -173,4 +176,8 @@ django_heroku.settings(locals())
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
+cloudinary.config( 
+  cloud_name = "drtcxc9r3", 
+  api_key = "151891726632947", 
+  api_secret = "xfBj2C0_nXm7bbcXSIczZrZ1RHc" 
+)
